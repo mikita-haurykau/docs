@@ -106,6 +106,8 @@ You see a new or replaced module in the **App Explorer**. You also see your chan
 If you are importing a module with the *.mxmodule* extension, a dialog informing you about the imported add-on module is also displayed:
 {{< figure src="/attachments/refguide/modeling/import-and-export/mxmodule-notification.png" class="no-border" >}}
 
+**Document mapping** – For modules with package IDs, a GUID mapping is stored for all documents in the module. This enables Studio Pro to match documents between versions even if they have been renamed, making updates and merges more reliable. See [Updating Marketplace Modules](/refguide/updating-marketplace-modules) for more information.
+
 ##### Rules for Replacing an Existing Module {#replace-existing-modules}
 
 {{% alert color="warning" %}}
@@ -123,7 +125,6 @@ If you replace a module with a newer version, the existing data in the module ar
 * The paths of parallel splits (in workflows) are matched by their position; if their order changes in a newer version of the module, or paths are added or removed, existing workflow instances may become incompatible.
 * The outcomes of user tasks (in workflows) are matched by value; if the outcome value changes in a newer version of the module, existing workflow instances may become incompatible.
 * The boundary events of workflow activities are matched by their position; if their order changes in a newer version of the module, or events are added or removed, existing workflow instances may become incompatible.
-    
 #### Importing an Add-On Module Package Through the App Directory
 
 {{% alert color="info" %}}
@@ -240,10 +241,21 @@ Select **Find usages of other user modules** to view the references, or click **
 
 {{< figure src="/attachments/refguide/modeling/import-and-export/select-dependencies.png" class="no-border" >}}
 
+#### Including files in your package
+
 Here you can select files you would like to include in your package. This list includes any files in the **userlib** or **resources** folders in your app directory, as well as widgets that are used in the module you are exporting. If you do not want to include these files, you can uncheck the boxes.
 
 {{% alert color="info" %}}To uncheck all the files quickly, press <kbd>Ctrl</kbd> + <kbd>A</kbd> to select all of the items then press <kbd>Space</kbd> to uncheck all the elements.
 {{% /alert %}}
+
+#### Exporting Modules with Package Management
+
+When you export a module package (by right-clicking the module in the App Explorer and selecting **Export module package**), Studio Pro asks whether to keep the existing Module ID or generate a new one:
+
+- **Generate New ID** – Replaces the current Module ID with a newly generated one and updates the Source ID to the previous Module ID, then proceeds with the export. Use this option if you are creating a fork or derivative of the module.
+- **Keep ID** – Proceeds with the export using the existing Module ID. Use this option for regular updates to the same module.
+
+The Module ID ensures that consumers can update their version of the module with your new version. If you change the Module ID, Studio Pro treats it as a different module. See [Module settings](/refguide/module-settings/#module-id) for more details.
 
 ### Exporting Widgets
 

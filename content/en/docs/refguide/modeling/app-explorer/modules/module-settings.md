@@ -112,6 +112,18 @@ In some cases you might want to override the automatically assigned Module ID. T
 Changing the Module ID may break existing installations that depend on this module. Only override this value if you know what you are doing.
 {{% /alert %}}
 
+You can also generate a new Module ID by clicking the **Generate New ID** button. This is useful when you want to create a fork or derivative of the module that is treated as a separate module. 
+
+### Source ID
+
+The **Source ID** identifies the original module this module is based on. Studio Pro uses this to trace a module back to its origin. If two modules share the same Source ID, Studio Pro recognizes them as versions of the same original module.
+
+In most cases, you do not need to change this value. You only need to change the Source ID in the edge case where you are forking a module (for example, if you downloaded Community Commons and want to release a custom company version of it). In this scenario, keep the Source ID set to the original module so you can still receive updates from the original source, while using a different Module ID for your forked version.
+
+Click the pencil icon next to the Source ID to change it if needed.
+
+{{% alert color="warning" %}} Only modify the Source ID if you are intentionally creating a fork of an existing module and understand the implications. {{% /alert %}}
+
 ### Checksum {#checksum}
 
 The **Checksum** is a read-only SHA-256 hash that uniquely identifies a specific version of the module package. It serves two purposes:
@@ -138,6 +150,8 @@ The legacy `package.xml` metadata file is still included for backward compatibil
 ## Read More
 
 * [Modules](/refguide/modules/)
+* [Import Modules](/refguide/import-and-export/#import-module)
+* [Export Modules](/refguide/import-and-export/#exporting-modules)
 * [Update modules](refguide/updating-marketplace-modules)
 * [Configure Add-on and Solution Modules for Publishing](/refguide/configure-add-on-and-solution-modules/)
 * [Applying Intellectual Property Protection](/appstore/creating-content/sol-ip-protection/)
