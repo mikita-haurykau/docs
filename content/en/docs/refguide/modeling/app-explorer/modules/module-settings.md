@@ -109,7 +109,10 @@ When you open an existing app in Studio Pro 11.12 or above, every module that do
 In some cases you might want to override the automatically assigned Module ID. To change it, click the pencil icon next to it. A dialog opens where you can enter a new value.
 
 {{% alert color="warning" %}}
-Changing the Module ID may break existing installations that depend on this module. Only override this value if you know what you are doing.
+Changing the Module ID may break existing installations that depend on this module. Only override this value if you know what you are doing. 
+
+Marketplace will not allow you to publish a module with ModuleID that is already used by another publisher.
+
 {{% /alert %}}
 
 You can also generate a new Module ID by clicking the **Generate New ID** button. This is useful when you want to create a fork or derivative of the module that is treated as a separate module. 
